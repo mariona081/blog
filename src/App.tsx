@@ -1,0 +1,21 @@
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import HomePage from "./pages/Homepage";
+import SinglePost from "./pages/SingleBlogPOsts";
+import Error from "./pages/ErrorPage";
+import Blog from "./pages/Blog";
+import Header from "./components/Header";
+
+export default function App() {
+    return (
+        <BrowserRouter>
+        <Header/>
+          <Routes>
+            <Route path="/" element={<HomePage/>}/> 
+            <Route path="/blog/:slug" element={<SinglePost/>} />    
+            <Route path="/blog" element={<Blog/>}/>
+            <Route path="*" element={<Error/>}/>
+          </Routes>
+        </BrowserRouter>
+        )
+} 
+ 
