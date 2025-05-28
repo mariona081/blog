@@ -44,7 +44,7 @@ export default function Blog() {
     <>
       <section className="px-5 2xl:max-w-7xl 2xl:mx-auto">
         <h1 className="font-bold text-4xl mt-5 mb-10 tracking-widest text-center md:text-6xl lg:text-8xl">
-          Blog Page
+          Mari Tabs
         </h1>
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -57,7 +57,7 @@ export default function Blog() {
                   to={`/blog/${post.slug.current}`}
                   className="py-2 px-6 rounded shadow text-white bg-black hover:bg-transparent border-2 border-black transition-all duration-500 hover:text-black font-bold"
                 >
-                  Read Full Article
+                  Explore my page
                 </Link>
               </button>
             </article>
