@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react"
 
+interface QuoteProps {
+    quote: string
+    author: string
+}
+
 export default function FeaturedPage() {
     const quoteBook = [{quote: "The world is a book and those who do not travel read only", author: "Saint Augustine"},
         {quote: "I have no special talent, i am only passionately curious", author: "Albert Einstein"},
         {quote: "if you can dream it, you can do it", author: "Walt Disney"},
         {quote: "You only live once, but if you do it right, once is enough", author: "May West"}]
 
-        const [dailyQuote, setDailyQuote] = useState("") 
+        const [dailyQuote, setDailyQuote] = useState<QuoteProps>({quote: "", author: ""}) 
 
         useEffect(() => {
             const randomQuote = quoteBook[Math.floor(Math.random() * quoteBook.length)];

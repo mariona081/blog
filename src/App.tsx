@@ -6,18 +6,28 @@ import Blog from "./pages/Blog";
 import Header from "./components/Header";
 import FeaturedPage from "./pages/featuresPage";
 import FeaturedHeader from "./components/featuredHeader";
+import MariTabs from "./pages/mariTabs";
+import MariTabsHeader from "./components/mariTabsHeader";
 
 function AppContent() {
   const location = useLocation()
-  const isFeaturedPage = location.pathname === "/featuresPage"
+  let header;
+  if (location.pathname === "/featuresPage") {
+    header = <FeaturedHeader/>
+  }else if (location.pathname === "/mariTabs") {
+    header = <MariTabsHeader/>
+  } else {
+    header = <Header/>
+  }
     return (
       <>
-          {isFeaturedPage ? <FeaturedHeader/>: <Header/>}
+          {header}
           <Routes>
             <Route path="/" element={<HomePage/>}/> 
             <Route path="/blog/:slug" element={<SinglePost/>} />    
             <Route path="/blog" element={<Blog/>}/>
             <Route path="/featuresPage" element={<FeaturedPage/>}/>
+            <Route path="/mariTabs" element={<MariTabs/>}/>
             <Route path="*" element={<Error/>}/>
           </Routes>
       </>
