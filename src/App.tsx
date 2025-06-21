@@ -8,6 +8,8 @@ import FeaturedPage from "./pages/featuresPage";
 import FeaturedHeader from "./components/featuredHeader";
 import MariTabs from "./pages/mariTabs";
 import MariTabsHeader from "./components/mariTabsHeader";
+import AboutMePage from "./pages/aboutMePage";
+// import AboutMeHeader from "./components/aboutMeHeader";
 
 function AppContent() {
   const location = useLocation()
@@ -16,6 +18,8 @@ function AppContent() {
     header = <FeaturedHeader/>
   }else if (location.pathname === "/mariTabs") {
     header = <MariTabsHeader/>
+  } else if(location.pathname === "/aboutMePage") {
+    header = 0
   } else {
     header = <Header/>
   }
@@ -28,6 +32,7 @@ function AppContent() {
             <Route path="/blog" element={<Blog/>}/>
             <Route path="/featuresPage" element={<FeaturedPage/>}/>
             <Route path="/mariTabs" element={<MariTabs/>}/>
+            <Route path="/aboutMePage" element={<AboutMePage/>}/>
             <Route path="*" element={<Error/>}/>
           </Routes>
       </>
