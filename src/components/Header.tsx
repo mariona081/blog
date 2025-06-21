@@ -18,7 +18,7 @@ export default function Header() {
                 </li>
                 <li className="lg:text-lg font-semibold" >
                     <button>
-                        <Link to="/blog">About me</Link>
+                        <Link to="/aboutMePage">About me</Link>
                     </button>
                 </li>
             </ul>
