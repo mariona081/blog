@@ -39,7 +39,7 @@ export default function SinglePost() {
         { slug }
       )
       .then((data) => {
-        setSinglePost(data) // not data[0] anymore — already pulling [0] in query
+        setSinglePost(data) 
         setIsLoading(false)
       })
       .catch((err) => {
@@ -61,16 +61,18 @@ export default function SinglePost() {
           </h1>
 
           {singlePost.mainImage?.asset?.url && (
-            <img
+            <div className="w-full max-w-4xl mx-auto">
+              <img
               src={singlePost.mainImage.asset.url}
               alt={singlePost.title}
               title={singlePost.title}
-              className="blog__image rounded-t"
+              className="w-full h-auto rounded-lg object-contain"
             />
+            </div>
           )}
 
           {Array.isArray(singlePost.body) && (
-            <div className="block__content prose prose-lg max-w-none mt-10">
+            <div className="prose prose-xl  md:prose-2xl max-w-none mt-10 text-black">
               <PortableText value={singlePost.body} />
             </div>
           )}

@@ -19,7 +19,7 @@ function AppContent() {
   }else if (location.pathname === "/mariTabs") {
     header = <MariTabsHeader/>
   } else if(location.pathname === "/aboutMePage") {
-    header = 0
+    header = null
   } else {
     header = <Header/>
   }
