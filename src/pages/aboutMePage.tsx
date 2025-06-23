@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 export default function AboutMePage() {
     return (
         <main className=" min-h-screen w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-amber-50">
-             <div className="bg-black flex items-center justify-center">
-        <img src="/img/Aboutme(1).png" alt="About Me 1" className="w-full h-auto object-cover max-h-[80vh]" />
-      </div>
+          <div className="bg-black flex items-center justify-end">
+            <img src="/img/Aboutme(1).png" alt="About Me 1" className="w-full h-auto object-cover max-h-[80vh]" />
+          </div>
       <div className="bg-amber-950 flex items-start">
         <nav className="flex items-start justify-center w-full">
           <ul className="flex items-center mt-10">

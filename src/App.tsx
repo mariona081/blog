@@ -20,6 +20,8 @@ function AppContent() {
     header = <MariTabsHeader/>
   } else if(location.pathname === "/aboutMePage") {
     header = null
+  } else if(location.pathname === "/") {
+    header = null
   } else {
     header = <Header/>
   }
