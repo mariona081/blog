@@ -89,3 +89,4 @@ export default function Blog() {
   )
 }
 
+// S9Vmwqi_+d!SCS9 my => supabasefor

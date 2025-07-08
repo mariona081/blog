@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 
 export default function MariTabsHeader() {
     return (<>
-     <header className="flex items-center w-full bg-neutral-100 text-amber-950 p-5">
+     <header className="flex items-center w-full text-white">
         <nav className="flex items-center justify-between w-full">
-            <div>Logo</div>
+            <div>
+                <img className="w-40 h-16" src="img/brownLogo.png"/>
+            </div>
             <ul className="flex items-center mt-10">
                 <li className="mr-10">
                     <button className="bg-amber-950  h-11 w-11 rounded-full flex items-center justify-center">
@@ -23,11 +25,7 @@ export default function MariTabsHeader() {
                         <Link to="/blog">Mari Tabs</Link>
                     </button>
                 </li>
-                <li className="lg:text-lg font-semibold mr-20" >
-                    <button>
-                        <Link to="/blog">About me</Link>
-                    </button>
-                </li>
+                
             </ul>
         </nav>
     </header>

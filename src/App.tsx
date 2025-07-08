@@ -4,19 +4,21 @@ import SinglePost from "./pages/SingleBlogPosts";
 import Error from "./pages/ErrorPage";
 import Blog from "./pages/Blog";
 import Header from "./components/Header";
-import FeaturedPage from "./pages/featuresPage";
+
 import FeaturedHeader from "./components/featuredHeader";
-import MariTabs from "./pages/mariTabs";
+
 import MariTabsHeader from "./components/mariTabsHeader";
 import AboutMePage from "./pages/aboutMePage";
+import FeaturedPage from "./pages/featuredPage";
+import PersonalSpace from "./pages/personalSpace";
 // import AboutMeHeader from "./components/aboutMeHeader";
 
 function AppContent() {
   const location = useLocation()
   let header;
-  if (location.pathname === "/featuresPage") {
+  if (location.pathname === "/featuredPage") {
     header = <FeaturedHeader/>
-  }else if (location.pathname === "/mariTabs") {
+  }else if (location.pathname === "/personalSpace") {
     header = <MariTabsHeader/>
   } else if(location.pathname === "/aboutMePage") {
     header = null
@@ -32,8 +34,8 @@ function AppContent() {
             <Route path="/" element={<HomePage/>}/> 
             <Route path="/blog/:slug" element={<SinglePost/>} />    
             <Route path="/blog" element={<Blog/>}/>
-            <Route path="/featuresPage" element={<FeaturedPage/>}/>
-            <Route path="/mariTabs" element={<MariTabs/>}/>
+            <Route path="/featuredPage" element={<FeaturedPage/>}/>
+            <Route path="/personalSpace" element={<PersonalSpace/>}/>
             <Route path="/aboutMePage" element={<AboutMePage/>}/>
             <Route path="*" element={<Error/>}/>
           </Routes>

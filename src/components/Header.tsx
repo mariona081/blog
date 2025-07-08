@@ -16,11 +16,6 @@ export default function Header() {
                         <Link to="/blog">Mari Tabs</Link>
                     </button>
                 </li>
-                <li className="lg:text-lg font-semibold" >
-                    <button>
-                        <Link to="/aboutMePage">About me</Link>
-                    </button>
-                </li>
             </ul>
         </nav>
     </header>

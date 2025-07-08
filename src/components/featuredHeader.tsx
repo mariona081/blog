@@ -5,7 +5,9 @@ export default function FeaturedHeader() {
     return (<>
      <header className="flex items-center w-full bg-amber-100 text-white p-5">
         <nav className="flex items-center justify-between w-full">
-            <div>Logo</div>
+            <div>
+                <img src="img/brownLogo"/>
+            </div>
             <ul className="flex items-center mt-10">
                 <li className="mr-10">
                     <button className="bg-amber-950  h-11 w-11 rounded-full flex items-center justify-center">
