@@ -7,10 +7,12 @@ import Header from "./components/Header";
 
 import FeaturedHeader from "./components/featuredHeader";
 
-import MariTabsHeader from "./components/mariTabsHeader";
+
 import AboutMePage from "./pages/aboutMePage";
 import FeaturedPage from "./pages/featuredPage";
 import PersonalSpace from "./pages/personalSpace";
+import PersonalSpaceHeader from "./components/personalSpaceHeader";
+import TopBlogPostIntroduction from "./pages/topBlogPosts";
 // import AboutMeHeader from "./components/aboutMeHeader";
 
 function AppContent() {
@@ -19,16 +21,18 @@ function AppContent() {
   if (location.pathname === "/featuredPage") {
     header = <FeaturedHeader/>
   }else if (location.pathname === "/personalSpace") {
-    header = <MariTabsHeader/>
+    header = <PersonalSpaceHeader/>
   } else if(location.pathname === "/aboutMePage") {
     header = null
+  }else if(location.pathname === "/topBlogPosts") {
+
   } else if(location.pathname === "/") {
     header = null
   } else {
     header = <Header/>
   }
     return (
-      <>
+      <div className="min-h-screen w-full overflow-hidden">
           {header}
           <Routes>
             <Route path="/" element={<HomePage/>}/> 
@@ -37,9 +41,10 @@ function AppContent() {
             <Route path="/featuredPage" element={<FeaturedPage/>}/>
             <Route path="/personalSpace" element={<PersonalSpace/>}/>
             <Route path="/aboutMePage" element={<AboutMePage/>}/>
+            <Route path="/topBlogPosts" element={<TopBlogPostIntroduction/>}/>
             <Route path="*" element={<Error/>}/>
           </Routes>
-      </>
+      </div>
       
         )
 } 

@@ -49,15 +49,6 @@ export default function Blog() {
 
   return (
     <div className="flex flex-col min-h-screen w-full">
-      <div className="bg-neutral-200 w-full flex flex-col items-center justify-center gap-10 py-20">
-        <h2 className="text-6xl text-amber-950 text-center">Are you up for a quiet escape?</h2>
-        <div className="w-2/5 border-b-amber-950 h-0.5 bg-amber-950"></div>
-        <span className="text-2xl text-amber-950 font-semibold text-center">
-          Code & Coffee | Between the Lines | On Screen | Growth Journal
-        </span>
-      </div>
-
-     
       <div className=" flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-white w-full  gap-10 py-12 px-10 md:px-20">
         {isLoading ? (
           <p className="col-span-3 text-center text-xl text-gray-600">Loading...</p>
