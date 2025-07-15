@@ -8,12 +8,12 @@ export default function Header() {
             <ul className="flex items-center mt-10 bg-red">
                 <li className="mr-15 lg:text-lg font-semibold">
                     <button>
-                        <Link to="/">Blog</Link>
+                        <Link to="/featuredBlog"> My blog</Link>
                     </button>
                 </li>   
                 <li className="lg:text-lg mr-15 font-semibold">
                     <button>
-                        <Link to="/blog">Mari Tabs</Link>
+                        <Link to="/mariTabs">Mari tabs</Link>
                     </button>
                 </li>
             </ul>

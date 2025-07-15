@@ -1,14 +1,40 @@
 
 @import "tailwindcss";
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('./assets/fonts/Ubuntu-Regular.woff') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Glacial Indifference';
+    src: url('./assets/fonts/GlacialIndifference-Regular.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'Brightwall';
+    src: url('./assets/fonts/brightwall/Brightwall.ttf') format('truetype');
+  }
+  
+
+
 body {
     margin: 0;
+    padding: 0;
     -webtik-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #5D4037;
     color: #D9D9D9;
+    font-family: 'Ubuntu', sans-serif;
     /* position: relative; */
 
 }  
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
 img {
     max-width: 100%;
     margin: auto;

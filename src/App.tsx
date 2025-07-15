@@ -2,31 +2,34 @@ import { Routes, Route, BrowserRouter, useLocation } from "react-router-dom";
 import HomePage from "./pages/Homepage";
 import SinglePost from "./pages/SingleBlogPosts";
 import Error from "./pages/ErrorPage";
-import Blog from "./pages/Blog";
+import Blog from "./pages/featuredBlog";
 import Header from "./components/Header";
-
 import FeaturedHeader from "./components/featuredHeader";
+import AboutMePage from "./pages/aboutMe";
+import PersonalSpace from "./pages/mariTabs";
+import CategoryPage from "./pages/categoryPage";
+import TopBlogPostIntroduction from "./pages/Blog";
 
 
-import AboutMePage from "./pages/aboutMePage";
-import FeaturedPage from "./pages/featuredPage";
-import PersonalSpace from "./pages/personalSpace";
-import PersonalSpaceHeader from "./components/personalSpaceHeader";
-import TopBlogPostIntroduction from "./pages/topBlogPosts";
-// import AboutMeHeader from "./components/aboutMeHeader";
 
 function AppContent() {
   const location = useLocation()
   let header;
   if (location.pathname === "/featuredPage") {
     header = <FeaturedHeader/>
-  }else if (location.pathname === "/personalSpace") {
-    header = <PersonalSpaceHeader/>
-  } else if(location.pathname === "/aboutMePage") {
+  }else if (location.pathname === "/mariTabs") {
     header = null
-  }else if(location.pathname === "/topBlogPosts") {
-
+  } else if(location.pathname === "/aboutMe") {
+    header = null
+  }else if(location.pathname === "/blog") {
+    header = null
   } else if(location.pathname === "/") {
+    header = null
+  }else if (location.pathname === "/featuredBlog") {
+    header = null
+  }else if(location.pathname === "/categoryPage"){
+    header = null
+  }else if(location.pathname.startsWith("/category/")) {
     header = null
   } else {
     header = <Header/>
@@ -37,11 +40,11 @@ function AppContent() {
           <Routes>
             <Route path="/" element={<HomePage/>}/> 
             <Route path="/blog/:slug" element={<SinglePost/>} />    
-            <Route path="/blog" element={<Blog/>}/>
-            <Route path="/featuredPage" element={<FeaturedPage/>}/>
-            <Route path="/personalSpace" element={<PersonalSpace/>}/>
-            <Route path="/aboutMePage" element={<AboutMePage/>}/>
-            <Route path="/topBlogPosts" element={<TopBlogPostIntroduction/>}/>
+            <Route path="/featuredBlog" element={<Blog/>}/>
+            <Route path="/mariTabs" element={<PersonalSpace/>}/>
+            <Route path="/aboutMe" element={<AboutMePage/>}/>
+            <Route path="/category/:categoryId" element={<CategoryPage/>}/>
+            <Route path="/blog" element={<TopBlogPostIntroduction/>}/>
             <Route path="*" element={<Error/>}/>
           </Routes>
       </div>

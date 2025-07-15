@@ -17,12 +17,12 @@ export default function MariTabsHeader() {
                 </li>
                 <li className="mr-20 lg:text-lg font-semibold">
                     <button>
-                        <Link to="/">Blog</Link>
+                        <Link to="/blog">Blog</Link>
                     </button> 
                 </li>   
                 <li className="lg:text-lg mr-20 font-semibold">
                     <button className="text-amber-950">
-                        <Link to="/blog">Mari Tabs</Link>
+                        <Link to="/mariTabs">Mari Tabs</Link>
                     </button>
                 </li>
                 

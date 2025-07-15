@@ -2,31 +2,30 @@ import { HomeIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 
 
-export default function topBlogPostHeader() {
+export default function TopBlogPostHeader() {
     return (<>
-     <header className="flex items-center w-full text-white">
-        <nav className="flex items-center justify-between w-full">
-            <div>
-                <img className="w-40 h-16" src="img/brownLogo.png"/>
+     <header className="w-full relative h-24">
+        <nav className="flex items-center max-w-7xl mx-auto  px-6 h-full relative">
+            <div className="flex items-center">
+                <img className="w-32 h-auto" src="img/brownLogo.png"/>
             </div>
-            <ul className="flex items-center mt-10">
+            <ul className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center gap-10  text-amber-900">
                 
-                <li className="mr-20 lg:text-lg font-semibold">
+                <li className="mr-10 lg:text-lg font-semibold">
                     <button>
-                        <Link to="/">My Blog</Link>
+                        <Link to="/blog">My blog</Link>
                     </button> 
                 </li>   
                 <li className="mr-10">
-                    <button className="bg-amber-950  h-11 w-11 rounded-full flex items-center justify-center">
-                <Link to="/"><HomeIcon className="h-7 w-7 text-white" /></Link> 
+                    <button className="  h-11 w-11 rounded-full flex items-center justify-center">
+                <Link to="/"><HomeIcon className="h-12 w-12  font-extrabold text-black" /></Link> 
                 </button>
                 </li>
-                <li className="lg:text-lg mr-20 font-semibold">
-                    <button className="text-amber-950">
-                        <Link to="/blog">Mari Tabs</Link>
+                <li className="lg:text-lg mr-10 font-semibold">
+                    <button>
+                        <Link to="/mariTabs">Mari tabs</Link>
                     </button>
                 </li>
-                
             </ul>
         </nav>
     </header>
