@@ -88,7 +88,7 @@ export default function TopBlogPostIntroduction() {
 
       <div className={`pt-40 pb-20 px-4 transition-opacity duration-700 ease-in ${heroShrink ? "opacity-100" : "opacity-0"}`}
       >
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2  px-4 lg:gap-10 gap-8">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2  px-4 lg:gap-10 gap-8">
             {isLoading ? (
               <div className="col-span-2 text-center text-xl text-gray-600">Loading...</div>
             ) : posts.length ? (
@@ -102,7 +102,7 @@ export default function TopBlogPostIntroduction() {
                       <img
                         src={post.mainImage.asset.url}
                         alt={post.mainImage?.alt || post.title}
-                        className="w-full aspect=[4/3] object-cover rounded-2xl"
+                        className="w-full aspect-[4/3] object-cover rounded-2xl"
                       />
                     )}
                   

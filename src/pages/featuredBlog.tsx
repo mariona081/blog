@@ -30,7 +30,7 @@ export default function Blog() {
   useEffect(() => {
     client
       .fetch(
-        `*[_type =="post"] | order(_createdAt desc){
+        `*[_type =="post"] | order(_createdAt desc)[0...3]{
           title, 
           slug,
           body, 
