@@ -95,20 +95,19 @@ export default function TopBlogPostIntroduction() {
               posts.map((post) => (
                 <div
                   key={post.slug.current}
-                  className="rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+                  className="w-full max-w-md mx-auto rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
                 >
             
                     {post.mainImage?.asset?.url && (
                       <img
                         src={post.mainImage.asset.url}
                         alt={post.mainImage?.alt || post.title}
-                        className="w-full aspect-[4/3] object-cover rounded-2xl"
+                        className="w-full aspect-[4/3] object-cover  rounded-2xl"
                       />
                     )}
                   
                   <div className=" mt-4 px-4">
                     <h4 className="text-xl font-bold text-gray-800 mb-2">{post.title}</h4>
-                    {/* <p className="text-lg text-gray-600">description</p> */}
                   </div>
                 </div>
               ))
