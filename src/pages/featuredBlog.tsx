@@ -65,17 +65,19 @@ export default function Blog() {
   const handleSubmit = async () => {
     try {
       const {error} = await supabase.from('messages').insert([FormData])
+      if (error) throw new Error(error.message)
 
-      if (error) {
-        console.error('Supabase insert error:', error.message)
-        alert(`Error: ${error.message}`)
-        return
-      }else {
-        alert('Message sent successfuly!')
-        setFormData({name: "", email: '', message: ''})
-      }
+      await fetch("/api/send-email", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(FormData)
+      });
+
+      alert("Message sent successfully!")
+      setFormData({name: "", email: "", message: ""})
     }catch (err) {
       console.error('Unexpected error:', err)  
+      alert("failed to send message. Try again")
     }
   }
 
