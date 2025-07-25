@@ -67,8 +67,9 @@ export default function Blog() {
       const {error} = await supabase.from('messages').insert([FormData])
 
       if (error) {
-        console.error('error saving message:', error)
-        alert('Somethig went wrong')
+        console.error('Supabase insert error:', error.message)
+        alert(`Error: ${error.message}`)
+        return
       }else {
         alert('Message sent successfuly!')
         setFormData({name: "", email: '', message: ''})
