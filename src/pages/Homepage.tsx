@@ -7,7 +7,7 @@ export default function HomePage() {
     return <div className="relative w-screen h-screen overflow-hidden bg-cover bg-no-repeat bg-center">
         <div className="absolute t-0 bg-black opacity-50 z-10"></div>
         <div className="absolute inset-0 pointer-events-none z-20 bg-repeat opacity-20"
-            style={{ backgroundImage: 'url("/img/heroGrains.png")' }}>
+            style={{ backgroundImage: 'url("/img/heroGrains.svg")' }}>
         </div>
         <div className="relative z-30">
             <Header/>

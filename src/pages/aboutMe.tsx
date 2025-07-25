@@ -5,7 +5,7 @@ export default function AboutMePage() {
     return (
         <main className=" overflow-hidden h-screen w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-amber-50">
           <div className="bg-black flex items-center justify-end">
-            <img  src="/img/Aboutme.png" alt="About Me 1" className=" object-cover h-[85vh] w-auto" />
+            <img  src="/img/Aboutme.svg" alt="About Me 1" className=" object-cover h-[85vh] w-auto" />
           </div>
       <div className=" relative bg-amber-950 flex items-center justify-center px-8">
         <div className="relative text-center max-w-md z-10 flex flex-col justify-center items-center gap-4">
@@ -59,7 +59,7 @@ export default function AboutMePage() {
           </div>
         </div>
         <div className="flex-1 h-1/2 bg-black flex items-center justify-center">
-          <img src="/img/Aboutme(1).png" alt="About Me 2" className="object-cover h-[85vh] w-auto shadow-2xl top-20" />
+          <img src="/img/Aboutme(1).svg" alt="About Me 2" className="object-cover h-[85vh] w-auto shadow-2xl top-20" />
         </div>
       </div>
         </main>

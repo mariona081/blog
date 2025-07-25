@@ -79,7 +79,7 @@ export default function TopBlogPostIntroduction() {
         >
           <img
             className="w-[110vw] max-w-[900px] object-contain scale-110"
-            src="/img/blackRose.png"
+            src="/img/blackRose.svg"
             alt="Floating flower"
           />
         </div>

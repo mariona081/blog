@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import client from "../Client"
 import { Link } from "react-router-dom"
 import FeaturedHeader from "../components/featuredHeader"
+import { supabase } from "../supabaseClient"
 
 interface Post {
   title: string
@@ -61,8 +62,20 @@ export default function Blog() {
       [name]: value
     }))
   }
-  const handleSubmit = () => {
-    console.log('Form submitted:', FormData)
+  const handleSubmit = async () => {
+    try {
+      const {error} = await supabase.from('message').insert([FormData])
+
+      if (error) {
+        console.error('error saving message:', error)
+        alert('Somethig went wrong')
+      }else {
+        alert('Message sent successfuly!')
+        setFormData({name: "", email: '', message: ''})
+      }
+    }catch (err) {
+      console.error('Unexpected error:', err)  
+    }
   }
 
   return (
@@ -87,12 +100,12 @@ export default function Blog() {
                   alt={post.mainImage?.alt || post.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-              )}
+              )} 
               <div className="p-4 bg-transparent">
                 <h3 className="text-xl font-semibold text-white">{post.title}</h3>
                 <p className="text-sm text-gray-400 mt-1 ">Click to read more</p>
               </div>
-            </Link>
+            </Link> 
           ))
         ) : (
           <p className="col-span-3 text-center text-red-500">No blog posts found.</p>
@@ -116,16 +129,14 @@ export default function Blog() {
             <div>
               <label htmlFor="message" className="text-sm block mb-2"></label>
               <textarea  name="message" id="message" rows={4} value={FormData.message} onChange={handleInputChange} placeholder="Message" className="w-full px-4 py-2 bg-white/20 backdrop-blur rounded-md"/>
-            </div>
+            </div> 
             <div className="pt-4">
-              <button type="submit" className="bg-white text-amber-950 px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition duration-300  ">
+              <button type="submit" className="bg-white text-amber-950 px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition duration-300">
                 Send Message
               </button>
             </div>
-          </form>
+          </form> 
         </div>
-        
-      
       </section>
     </div>
   )
