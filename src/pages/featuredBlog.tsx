@@ -64,7 +64,7 @@ export default function Blog() {
   }
   const handleSubmit = async () => {
     try {
-      const {error} = await supabase.from('message').insert([FormData])
+      const {error} = await supabase.from('messages').insert([FormData])
 
       if (error) {
         console.error('error saving message:', error)
