@@ -1,9 +1,18 @@
 import { useNavigate } from "react-router-dom";
 import PersonalSpaceHeader from "../components/personalSpaceHeader";
+import { useEffect } from "react";
 
 type CategoryId = "growth" | "whatIStandFor" | "interests" | "work"
 
 export default function PersonalSpace() {
+    useEffect(() => {
+        const imagesToPreload = ["/img/MariTabs99.svg","/grains.png" ];
+        imagesToPreload.forEach((src)=> {
+            const img = new Image();
+            img.src = src
+        })
+    }, [])
+
     const navigate = useNavigate()
     const handleCategoryClick = (category: CategoryId) => {
         navigate(`/category/${category}`)
