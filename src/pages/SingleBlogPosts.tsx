@@ -67,6 +67,7 @@ export default function SinglePost() {
               alt={singlePost.title}
               title={singlePost.title}
               className="w-full h-auto rounded-lg object-contain"
+               loading="eager"
             />
             </div>
           )}

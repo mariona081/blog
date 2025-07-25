@@ -7,7 +7,7 @@ export default function CategoryPageHeader() {
      <header className="flex items-center w-full text-amber-900 p-5">
         <nav className="flex items-center justify-between w-full ">
             <div>
-                <img className="w-32 h-auto cursor-pointer" src="/img/brownLogo.png" alt="Logo"/>
+                <img className="w-32 h-auto cursor-pointer" src="/img/brownLogo.png" alt="Logo"  loading="eager"/>
             </div>
             <ul className="flex items-center mt-10">
                 <li className="mr-20">

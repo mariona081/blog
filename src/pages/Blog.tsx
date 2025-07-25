@@ -104,6 +104,7 @@ export default function TopBlogPostIntroduction() {
                         src={post.mainImage.asset.url}
                         alt={post.mainImage?.alt || post.title}
                         className="w-full aspect-[4/3] object-cover  rounded-2xl"
+                         loading="eager"
                       />
                     )}
                   

@@ -23,19 +23,19 @@ export default function PersonalSpace() {
                 </section>
                 <section className="w-full max-w-6xl px-4 grid grid-cols-2 md:grid-cols-4 gap-12 mx-auto">
                     <div className="flex flex-col gap-2 items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => handleCategoryClick("growth")}>
-                        <img className="w-36 md:w-48 h-auto" src="img/growth.svg"/>
+                        <img className="w-36 md:w-48 h-auto" src="img/growth.svg"  loading="eager"/>
                         <span className="text-black text-2xl" style={{fontFamily: 'Brightwall'}}>my growth</span>
                     </div>
                     <div className="flex flex-col gap-2 items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => handleCategoryClick("whatIStandFor")}>
-                        <img className="w-36 md:w-48 h-auto" src="img/values.svg"/>
+                        <img className="w-36 md:w-48 h-auto" src="img/values.svg"  loading="eager"/>
                         <span className="text-black text-2xl" style={{fontFamily: 'Brightwall'}}>What i stand for</span>
                     </div>
                     <div className="flex flex-col gap-2 items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => handleCategoryClick("interests")}>
-                        <img className="w-36 md:w-48 h-auto" src="img/interests.svg"/>
+                        <img className="w-36 md:w-48 h-auto" src="img/interests.svg"  loading="eager"/>
                         <span className="text-black text-2xl" style={{fontFamily: 'Brightwall'}}>my interests</span>
                     </div>
                     <div className="flex flex-col gap-2 items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => handleCategoryClick("work")}>
-                        <img className="w-36 md:w-48 h-auto"src="img/work.svg"/>
+                        <img className="w-36 md:w-48 h-auto"src="img/work.svg"  loading="eager"/>
                         <span className="text-black text-2xl" style={{fontFamily: 'Brightwall'}}>my work</span>
                     </div>
                 </section>

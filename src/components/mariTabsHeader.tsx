@@ -7,7 +7,7 @@ export default function MariTabsHeader() {
      <header className="flex items-center w-full text-white">
         <nav className="flex items-center justify-between w-full">
             <div>
-                <img className="w-40 h-16" src="img/brownLogo.png"/>
+                <img className="w-40 h-16" src="img/brownLogo.png"  loading="eager"/>
             </div>
             <ul className="flex items-center mt-10">
                 <li className="mr-10">

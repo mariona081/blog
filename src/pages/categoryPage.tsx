@@ -63,7 +63,7 @@ export default function CategoryPage() {
                         <div className="flex items-center justify-between px-8 py-12 min-h-[70vh]">
                             <div className="flex-1 flex flex-col items-center justify-center">
                                 <div className="flex flex-col gap-4 items-center">
-                                    <img className="w-96 md:96 h-auto" src={getSelectedCategory()?.image} alt={getSelectedCategory()?.title}/>
+                                    <img className="w-96 md:96 h-auto" src={getSelectedCategory()?.image} alt={getSelectedCategory()?.title} loading="eager"/>
                                     <span className="text-black text-3xl font-medium" style={{fontFamily: 'Brightwall'}}>{getSelectedCategory()?.title}</span>
                                 </div>
                             </div>
@@ -71,7 +71,7 @@ export default function CategoryPage() {
                         <div className="flex flex-col gap-8 items-center">
                             {getOtherCategories().map((category) => (
                             <div key={category.id} className="flex flex-col gap-2 items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => handleCategoryClick(category.id as CategoryId )}>
-                                <img className="w-20 md:w-24 h-auto" src={category.image} alt={category.title}/>
+                                <img className="w-20 md:w-24 h-auto" src={category.image} alt={category.title} loading="eager"/>
                                 <span className="text-black text-sm text-center" style={{fontFamily: 'Brightwall'}}>{category.title}</span>
                             </div>
                             ))}  

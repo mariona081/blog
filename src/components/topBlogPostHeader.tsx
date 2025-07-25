@@ -7,7 +7,7 @@ export default function TopBlogPostHeader() {
      <header className="w-full relative h-24">
         <nav className="flex items-center max-w-7xl mx-auto  px-6 h-full relative">
             <div className="flex items-center">
-                <img className="w-32 h-auto" src="img/brownLogo.png"/>
+                <img className="w-32 h-auto" src="img/brownLogo.png"  loading="eager"/>
             </div>
             <ul className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center gap-10  text-amber-900">
                 
