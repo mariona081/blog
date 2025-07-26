@@ -64,22 +64,36 @@ export default function Blog() {
   }
   const handleSubmit = async () => {
     try {
-      const {error} = await supabase.from('messages').insert([FormData])
-      if (error) throw new Error(error.message)
-
-      await fetch("/api/send-email", {
+      // 1. Save to Supabase
+      const { error } = await supabase.from("messages").insert([FormData]);
+      if (error) {
+        console.error("Supabase insert error:", error);
+        alert("Supabase insert failed: " + error.message);
+        return;
+      }
+  
+      // 2. Send email via Vercel API
+      const res = await fetch("/api/send-email", {
         method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(FormData)
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(FormData),
       });
-
-      alert("Message sent successfully!")
-      setFormData({name: "", email: "", message: ""})
-    }catch (err) {
-      console.error('Unexpected error:', err)  
-      alert("failed to send message. Try again")
+      const data = await res.json();
+  
+      if (!res.ok) {
+        console.error("Email API failed:", data);
+        alert("Email sending failed: " + (data.error || "unknown error"));
+        return;
+      }
+  
+      alert("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (err: any) {
+      console.error("Unexpected error details:", err.message || err);
+      alert("Unexpected error: " + (err.message || "Check console for details"));
     }
-  }
+  };
+  
 
   return (
     <div className="flex flex-col  min-h-screen w-full text-white">
@@ -147,3 +161,4 @@ export default function Blog() {
 }
 
 // S9Vmwqi_+d!SCS9 my => supabasefor 
+ 
