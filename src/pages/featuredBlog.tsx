@@ -64,15 +64,13 @@ export default function Blog() {
   }
   const handleSubmit = async () => {
     try {
-      // 1. Save to Supabase
       const { error } = await supabase.from("messages").insert([FormData]);
       if (error) {
         console.error("Supabase insert error:", error);
         alert("Supabase insert failed: " + error.message);
         return;
       }
-  
-      // 2. Send email via Vercel API
+
       const res = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
