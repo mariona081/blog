@@ -9,8 +9,8 @@ export default function AboutMePage() {
           </div>
       <div className=" relative bg-amber-950 flex items-center justify-center px-8">
         <div className="relative text-center max-w-md z-10 flex flex-col justify-center items-center gap-4">
-            <p className="text-5xl font-medium" style={{fontFamily: 'Brightwall'}}>I'm <span className="text-5xl font-bold" style={{fontFamily: 'Brightwall'}}>Marion</span></p>
-            <p className="mt-2 tetx-sm text-start">
+            <p className="text-5xl font-medium" style={{fontFamily: 'Brightwall'}}>I'm <span className=" font-bold">Marion</span></p>
+            <p className="mt-2 text-sm text-start">
             With me it’s all about: a little bit of code, a little bit of cozy. 
             I love stories, quiet days, and finding meaning in the small things.
             </p>
@@ -30,9 +30,7 @@ export default function AboutMePage() {
         <nav className="absolute top-4 left-1/2 transform -translate-x-1/2">
           <ul className="flex items-center mt-10">
             <li className="mr-4 lg:text-lg font-semibold">
-                    <button>
                         <Link to="/">my Blog</Link>
-                    </button> 
             </li>   
             <li className="mr-4">
               <button className="bg-amber-50 h-15 w-15 rounded-full flex items-center justify-center">
@@ -40,9 +38,7 @@ export default function AboutMePage() {
               </button>
             </li>
             <li className="lg:text-lg mr-4 font-semibold">
-                    <button>
                         <Link to="/blog">Mari tabs</Link>
-                    </button>
             </li>
           </ul>
         </nav>
@@ -53,9 +49,7 @@ export default function AboutMePage() {
           <p className="text-amber-950 mt-4 text-sm leading-relaxed">Something in me shifted. I saw possibilities I’d never considered before.
           For the first time in a long time, I felt curious and excited. I felt something I hadn’t felt in years: hope.</p>
           <div>
-            <button>
                   <Link to="/blog"  className="mt-6 inline-block py-2 px-6  rounded-full shadow text-amber-50 bg-amber-900 ">Explore my blog</Link>
-              </button>
           </div>
         </div>
         <div className="flex-1 h-1/2 bg-black flex items-center justify-center">

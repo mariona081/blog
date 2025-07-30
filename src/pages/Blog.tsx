@@ -63,6 +63,7 @@ export default function TopBlogPostIntroduction() {
     <div className="min-h-screen bg-neutral-100 w-full overflow-x-hidden">
       <TopBlogPostHeader />
 
+      {/* Hero section */}
       <div className="pt-32 pb-32 text-center transition-opacity duration-700 ease-out flex flex-col gap-7">
         <h2 className={`text-5xl md:text-6xl  text-black transition-opacity duration-500 ${heroShrink ? "opacity-0" : "opacity-100"}`} style={{fontFamily: 'Brightwall'}}>Are you up for a quiet escape?</h2>
         <div className={`w-2/5 mx-auto h-0.5 bg-black mt-4 mb-6 transition-opacity duration-500 ${heroShrink ?"opacity-0" : "opacity-100" }`} ></div>
@@ -71,7 +72,7 @@ export default function TopBlogPostIntroduction() {
         </span>
       </div>
 
-      
+      {/* Floating flower */}
       <div className="relative h-[500px]">
         <div
           className={flowerClasses}
@@ -86,7 +87,7 @@ export default function TopBlogPostIntroduction() {
         </div>
       </div>
 
-
+    {/* blog post grid */}
       <div className={`pt-40 pb-20 px-4 transition-opacity duration-700 ease-in ${heroShrink ? "opacity-100" : "opacity-0"}`}
       >
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2  px-4 lg:gap-10 gap-8">

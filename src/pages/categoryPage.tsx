@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-// import PersonalSpaceHeader from "../components/personalSpaceHeader";
 import { useNavigate, useParams } from "react-router-dom";
 import CategoryPageHeader from "../components/categoryPageHeader";
 
@@ -56,7 +55,7 @@ export default function CategoryPage() {
             <div className="absolute inset-0 pointer-events-none z-10 bg-repeat opacity-20"
             style={{ backgroundImage: 'url("/grains.png")' }}>
             </div>
-            {<CategoryPageHeader/>}
+            <CategoryPageHeader/>
             <div className="relative z-20">
                 {selectedCategory && (
                     <div className="flex items-center justify-around">
