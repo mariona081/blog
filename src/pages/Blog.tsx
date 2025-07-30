@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import TopBlogPostHeader from "../components/topBlogPostHeader";
+import {motion} from "framer-motion"
 import client from "../Client";
+import { Link } from "react-router-dom";
 
 interface Post {
   title: string;
@@ -56,8 +58,7 @@ export default function TopBlogPostIntroduction() {
   }, []);
 
   const heroShrink = scrollY > 300;
-  const flowerClasses = heroShrink ? "w-[400px] fixed right-12 top-32 transition-all duration-700 ease-out z-10" : "w-[90vw] max-w-5xl mx-auto transition-all duration-700 ease-out z-10"
-   const flowerWrapperStyle = heroShrink ? {} : {transform: `translateY(${scrollY * 0.2}px)`}
+  
 
   return (
     <div className="min-h-screen bg-neutral-100 w-full overflow-x-hidden">
@@ -74,17 +75,9 @@ export default function TopBlogPostIntroduction() {
 
       {/* Floating flower */}
       <div className="relative h-[500px]">
-        <div
-          className={flowerClasses}
-          style={flowerWrapperStyle}
-        >
-          <img 
-            className="w-[110vw] max-w-[900px] object-contain scale-110"
-            src="/img/blackRose.svg"
-            alt="Floating flower"
-            loading="eager"
-          />
-        </div>
+        <motion.div initial={{opacity:0, y:50, scale:0.95}} animate={{opacity:1, y:0, scale:1}} transition={{duration:1.2, ease: "easeOut"}} className={`${heroShrink ? "w-[400px] fixed right-12 top-32 z-10":"w-[90vw] max-w-5xl mx-auto z-10" }`} style={!heroShrink ? {transform: `translateY(${scrollY * 0.2})px`}: {}}>
+          <motion.img src="/img/blackRose.svg" alt="Floating flower" loading="eager" initial={{scale:0.95}} animate={{scale:1}} transition={{duration:1, delay:0.2}} className="w-[110vw] max-w-[900px] object-contain scale-110"/>          
+        </motion.div>
       </div>
 
     {/* blog post grid */}
@@ -100,7 +93,8 @@ export default function TopBlogPostIntroduction() {
                   className="w-full max-w-md mx-auto rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
                 >
             
-                    {post.mainImage?.asset?.url && (
+                  <Link to={`/blog/${post.slug.current}`} key={post.slug.current} className="w-ful max-w-md mx-auto rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duratioon-300 transform hover:scale-105">
+                  {post.mainImage?.asset?.url && (
                       <img
                         src={post.mainImage.asset.url}
                         alt={post.mainImage?.alt || post.title}
@@ -112,6 +106,7 @@ export default function TopBlogPostIntroduction() {
                   <div className=" mt-4 px-4">
                     <h4 className="text-xl font-bold text-gray-800 mb-2">{post.title}</h4>
                   </div>
+                  </Link>
                 </div>
               ))
             ) : (
