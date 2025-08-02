@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "tsx ./api/send-email.ts"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -16,16 +17,20 @@
     "@sanity/client": "^6.29.0",
     "@supabase/supabase-js": "^2.52.1",
     "@tailwindcss/vite": "^4.1.4",
-    "dotenv": "^16.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
     "framer-motion": "^12.23.12",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.5.0",
     "resend": "^4.7.0",
-    "tailwindcss": "^4.1.4"
+    "tailwindcss": "^4.1.4",
+    "tsx": "^4.20.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
+    "@types/express": "^5.0.3",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
