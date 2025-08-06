@@ -71,18 +71,20 @@ export default function Blog() {
         return;
       }
 
-      const res = await fetch("/api/send-email", {
+      const res = await fetch("http://127.0.0.1:2034/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(FormData),
       });
-      const data = await res.json();
+      const data = await res.text();
   
       if (!res.ok) {
         console.error("Email API failed:", data);
         alert("Email sending failed: " + (data.error || "unknown error"));
         return;
       }
+
+      console.log({data})
   
       alert("Message sent successfully!");
       setFormData({ name: "", email: "", message: "" });
