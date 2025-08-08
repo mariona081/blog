@@ -2,7 +2,7 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export default async function handler(req: any, res: any) {
+export default async function Handler(req: any, res: any) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
@@ -16,7 +16,7 @@ export default async function handler(req: any, res: any) {
   try {
     await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: "your-email@example.com",
+      to: "xanfonmarion@gmail.com",
       subject: `New Contact Form Submission from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     });
